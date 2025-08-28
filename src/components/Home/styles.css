@@ -1,4 +1,9 @@
 /* Home Component Styles */
 .homepage {
   display: flex;
+  width: 100vw;
+}
+
+.home-content {
+  width: 100%;
 }
