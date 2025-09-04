@@ -3,6 +3,8 @@ export interface DashboardInitialState {
   isLoading: boolean;
   error: boolean | null;
   status: "idle" | "loading" | "failed";
+  userId: string;
+  userName: string;
   data: {
     id: string;
     name: string;
@@ -30,4 +32,18 @@ export const dashboardInitialState: DashboardInitialState = {
     updatedAt: "",
     widgets: [],
   },
+  userId: "",
+  userName: "",
+};
+
+interface AuthState {
+  user: null | { id: number; username: string; name: string };
+  loading: boolean;
+  error: string | null;
+}
+
+export const initialAuthState: AuthState = {
+  user: null,
+  loading: false,
+  error: null,
 };

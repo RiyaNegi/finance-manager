@@ -1,10 +1,12 @@
 import type { Action, ThunkAction } from "@reduxjs/toolkit";
 import { configureStore } from "@reduxjs/toolkit";
 import changeNameReducer from "./slices/homeSlice";
+import authReducer from "./slices/authSlice";
 
 export const store = configureStore({
   reducer: {
     home: changeNameReducer, // Renamed to match slice name
+    auth: authReducer,
   },
 });
 
