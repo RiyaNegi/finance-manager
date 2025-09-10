@@ -1,17 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import "./styles.css";
-import userIcon from "../../assets/User_box.svg";
-import { useAppSelector } from "../../hooks";
-import { selectAuth } from "../../store/slices/authSlice";
+
+import HeaderMenu from "./HeaderMenu";
 
 const Header = () => {
-  const userName = useAppSelector(selectAuth).user?.username || "Username";
   return (
     <div className="header-div">
       <div>Dashboard</div>
-      <div className="header-user">
-        <img src={userIcon} /> {userName}
-      </div>
+      <HeaderMenu />
     </div>
   );
 };

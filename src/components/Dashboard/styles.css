@@ -77,3 +77,13 @@
 .recharts-wrapper:focus {
   border: none;
 }
+.header-dropdown-menu {
+  position: absolute;
+  background-color: white;
+  padding: 10px 20px;
+  right: 0px;
+  top: 50px;
+  box-shadow: 1px 1px 10px 0px rgba(61, 61, 61, 0.31);
+  -webkit-box-shadow: 1px 1px 10px 0px rgba(61, 61, 61, 0.31);
+  -moz-box-shadow: 1px 1px 10px 0px rgba(61, 61, 61, 0.31);
+}
