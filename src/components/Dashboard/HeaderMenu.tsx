@@ -1,14 +1,15 @@
 import React from "react";
 import "./styles.css";
+import { useDispatch, useSelector } from "react-redux";
 import userIcon from "../../assets/User_box.svg";
 import { useAppSelector } from "../../hooks";
-import { selectAuth } from "../../store/slices/authSlice";
+import { logout, selectAuth } from "../../store/slices/authSlice";
 
-import { 
-  Button, 
-  Avatar, 
-  Box, 
-  Text, 
+import {
+  Button,
+  Avatar,
+  Box,
+  Text,
   Portal,
   MenuContent,
   MenuItem,
@@ -19,6 +20,12 @@ import {
 
 const HeaderMenu = () => {
   const userName = useAppSelector(selectAuth).user?.username || "Username";
+  const dispatch = useDispatch();
+
+  const handleLogout = () => {
+    dispatch(logout());
+  };
+
   return (
     <MenuRoot>
       <MenuTrigger asChild>
@@ -31,7 +38,9 @@ const HeaderMenu = () => {
           <MenuContent>
             <MenuItem value="profile">Profile</MenuItem>
             <MenuItem value="settings">Settings</MenuItem>
-            <MenuItem value="logout">Logout</MenuItem>
+            <MenuItem value="logout" onClick={() => handleLogout()}>
+              Logout
+            </MenuItem>
           </MenuContent>
         </MenuPositioner>
       </Portal>
